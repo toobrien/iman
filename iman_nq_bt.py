@@ -30,12 +30,10 @@ def test(tp: float, sl: float):
 
             while j < n:
 
-                cur     = rows[j]
-                vals    = [ cur[1], cur[2], cur[3], cur[4] ]
-                max_p   = max(vals)
-                min_p   = min(vals) 
+                high    = rows[j][2]
+                low     = rows[j][3]
 
-                if max_p >= tp_ or min_p >= tp_:
+                if high >= tp_:
 
                     won     += 1
                     total   += 1
@@ -43,7 +41,7 @@ def test(tp: float, sl: float):
 
                     break
                 
-                elif min_p <= sl_ or max_p <= sl_:
+                elif low <= sl_:
 
                     total   += 1
                     i       =  j + 1
